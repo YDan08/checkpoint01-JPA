@@ -1,6 +1,7 @@
 package br.com.fiap.jpa;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import br.com.fiap.impl.LivroServiceImpl;
 import br.com.fiap.jpa.entity.Livro;
@@ -14,7 +15,8 @@ public class Main {
 	livroService.cadastrar(new Livro("livro2","Yamashita", LocalDate.of(2020, 1, 1)));
 	livroService.cadastrar(livro3);
 	
-	livroService.listar();
+	List<Livro> livros = livroService.listar();
+	System.out.println(livros);
 	
 	
 	livroService.remover(1L);
